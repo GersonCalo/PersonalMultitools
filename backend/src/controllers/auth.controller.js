@@ -16,11 +16,11 @@ export const register = async (req, res) => {
 
     res.cookie("token", token);
     res.json({
-        id: userSaved._id,
-        username: userSaved.username,
-        email: userSaved.email,
-        createdAt: userSaved.createdAt,
-        updatedAt: userSaved.updatedAt
+      id: userSaved._id,
+      username: userSaved.username,
+      email: userSaved.email,
+      createdAt: userSaved.createdAt,
+      updatedAt: userSaved.updatedAt,
     });
   } catch (error) {
     console.log(error);
@@ -29,10 +29,9 @@ export const register = async (req, res) => {
 };
 
 export const login = async (req, res) => {
-  const {  email, password } = req.body;
+  const { email, password } = req.body;
 
   try {
-
     const userFound = await User.findOne({ email });
 
     if (!userFound) return res.status(404).json({ error: "User not found" });
@@ -45,11 +44,11 @@ export const login = async (req, res) => {
 
     res.cookie("token", token);
     res.json({
-        id: userFound._id,
-        username: userFound.username,
-        email: userFound.email,
-        createdAt: userFound.createdAt,
-        updatedAt: userFound.updatedAt,
+      id: userFound._id,
+      username: userFound.username,
+      email: userFound.email,
+      createdAt: userFound.createdAt,
+      updatedAt: userFound.updatedAt,
     });
   } catch (error) {
     console.log(error);
@@ -58,6 +57,18 @@ export const login = async (req, res) => {
 };
 
 export const logout = (req, res) => {
-  res.cookie("token","",{expires: new Date(0)});
+  res.cookie("token", "", { expires: new Date(0) });
   res.sendStatus(200);
+};
+
+export const profile = async (req, res) => {
+  const userFfound = await User.findById(req.user.id);
+  if (!userFfound) return res.status(404).json({ error: "User not found" });
+  res.json({
+    id: userFfound._id,
+    username: userFfound.username,
+    email: userFfound.email,
+    createdAt: userFfound.createdAt,
+    updatedAt: userFfound.updatedAt,
+  })
 };
