@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { registerRequest } from "../api/auth";
 
 function RegisterPage() {
   const { register, handleSubmit } = useForm();
@@ -7,8 +8,10 @@ function RegisterPage() {
     <>
       <div className="bg-zinc-800 max-w-md p-10 rounded-md">
         <form
-          onSubmit={handleSubmit((values) => {
+          onSubmit={handleSubmit(async (values) => {
             console.log(values);
+            const res = await registerRequest(values);
+            console.log(res);
           })}
         >
           <input
