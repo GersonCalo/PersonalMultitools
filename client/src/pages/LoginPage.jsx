@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useAuth } from "../context/AuthContext";
 import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 function LoginPage() {
   const {
@@ -17,6 +18,7 @@ function LoginPage() {
 
   return (
     <>
+      <Navbar />
       <div className="flex flex-col justify-center items-center bg-white h-[100vh]">
         <div className="mx-auto flex w-full flex-col justify-center px-5 pt-0 md:h-[unset] md:max-w-[50%] lg:h-[100vh] min-h-[100vh] lg:max-w-[50%] lg:px-6">
           <div className="my-auto mb-auto mt-8 flex flex-col md:mt-[70px] w-[350px] max-w-[450px] mx-auto md:max-w-[450px] lg:mt-[130px] lg:max-w-[450px]">
@@ -26,14 +28,9 @@ function LoginPage() {
             <p className="mb-2.5 mt-2.5 font-normal text-zinc-950 dark:text-zinc-400">
               Enter your email and password to sign in!
             </p>
-            <div className="mt-8"></div>
-            <div className="relative my-4">
-              <div className="relative flex items-center py-1">
-                <div className="grow border-t border-zinc-200 dark:border-zinc-700"></div>
-                <div className="grow border-t border-zinc-200 dark:border-zinc-700"></div>
-              </div>
-            </div>
-            <div>
+            
+            <div
+            >
               <form onSubmit={onSubmit} className="mb-4">
                 <div className="grid gap-2">
                   <div className="grid gap-1">
