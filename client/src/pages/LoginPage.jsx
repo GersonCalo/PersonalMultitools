@@ -29,8 +29,7 @@ function LoginPage() {
               Enter your email and password to sign in!
             </p>
             
-            <div
-            >
+            <div>
               <form onSubmit={onSubmit} className="mb-4">
                 <div className="grid gap-2">
                   <div className="grid gap-1">

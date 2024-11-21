@@ -9,7 +9,7 @@ function Navbar() {
       className="w-full z-30 top-0 py-1 fixed bg-white shadow-lg border-b border-blue-400 "
     >
       <div className="w-full flex items-center justify-between mt-0 px-6 py-2">
-        <label for="menu-toggle" className="cursor-pointer md:hidden block">
+        <label htmlFor="menu-toggle" className="cursor-pointer md:hidden block">
           <svg
             className="fill-current text-blue-600"
             xmlns="http://www.w3.org/2000/svg"
