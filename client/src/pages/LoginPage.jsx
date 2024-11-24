@@ -25,13 +25,13 @@ function LoginPage() {
 
   return (
     <>
-      <div className="flex flex-col justify-center items-center bg-white h-[100vh]">
-        <div className="mx-auto flex w-full flex-col justify-center px-5 pt-0 md:h-[unset] md:max-w-[50%] lg:h-[100vh] min-h-[100vh] lg:max-w-[50%] lg:px-6">
+      <div className="flex flex-col justify-center items-center h-screen bg-gray-400 overflow-hidden">
+        <div className="mt-40 mx-auto flex w-full flex-col justify-center px-5 pt-0 md:h-[unset] md:max-w-[50%] lg:h-[100vh] min-h-[100vh] lg:max-w-[50%] lg:px-6">
           <div className="my-auto mb-auto mt-8 flex flex-col md:mt-[70px] w-[350px] max-w-[450px] mx-auto md:max-w-[450px] lg:mt-[130px] lg:max-w-[450px]">
-            <p className="text-[32px] font-bold text-zinc-950 dark:text-white">
+            <p className="text-[32px] font-bold text-zinc-950 ">
               Sign In
             </p>
-            <p className="mb-2.5 mt-2.5 font-normal text-zinc-950 dark:text-zinc-400">
+            <p className="mb-2.5 mt-2.5 font-normal text-zinc-950 ">
               Enter your email and password to sign in!
             </p>
             
@@ -92,7 +92,7 @@ function LoginPage() {
                 </div>
               </form>
               <p className="text-zinc-950 mt-2 dark:text-white">
-                <Link to="/register" className="text-sky-500">Crar cuenta</Link>
+                <Link to="/register" className="text-sky-500">Create acout</Link>
               </p>
             </div>
           </div>

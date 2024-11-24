@@ -1,7 +1,7 @@
 
 function ProfilePage() {
   return (
-    <div>ProfilePage</div>
+    <div className="text-black">ProfilePage</div>
   )
 }
 
