@@ -1,7 +1,8 @@
 import { useForm } from "react-hook-form";
 import { useAuth } from "../context/AuthContext";
-import { Link } from "react-router-dom";
+import { Link , useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import { useEffect } from "react";
 
 function LoginPage() {
   const {
@@ -10,11 +11,17 @@ function LoginPage() {
     formState: { errors },
   } = useForm();
 
-  const { sigin, errors: singinErrors } = useAuth();
+  const { sigin, errors: singinErrors , isAuthenticated} = useAuth();
+
+  const navigate = useNavigate();
 
   const onSubmit = handleSubmit((date) => {
     sigin(date);
   });
+
+  useEffect(() => {
+    if (isAuthenticated) navigate("/menu");
+  }, [isAuthenticated]);
 
   return (
     <>
