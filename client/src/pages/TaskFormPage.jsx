@@ -11,7 +11,7 @@ function TaskFormPage() {
   })
 
   return (
-    <div className='w-1/2 mx-auto mt-10 '>
+    <div className="flex flex-col justify-center items-center bg-white h-[100vh]">
       <div className='bg-zinc-400 max-w-md w-full p-10 rounded-md'>
 
       <h1 className='text-2xl font-bold mb-4 text-black' >Create Task</h1>
