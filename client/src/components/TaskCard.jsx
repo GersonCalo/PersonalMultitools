@@ -1,5 +1,8 @@
 import { useTask } from '../context/TaskContext';
 import {Link } from 'react-router-dom';
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+dayjs.extend(utc);
 
 function TaskCard({ task, onDelete, onDetails }) {
   const{deleteTask} =  useTask();
@@ -9,9 +12,8 @@ function TaskCard({ task, onDelete, onDetails }) {
           <div className=" border-l-4 border-blue-600 pl-4">
             <h4 className="font-bold text-xl text-black">{task.title}</h4>
             <p className="text-gray-700 h-24 overflow-hidden overflow-ellipsis whitespace-nowrap">{task.description}</p>
-            <p className="text-gray-600 mt-2">{new Date(task.date).toLocaleDateString()}</p>
+            <p className="text-gray-600 mt-2">{dayjs(task.date).utc().format("DD/MM/YYYY")}</p>
           </div>
-        {/* Botones para eliminar y ver detalles */}
         <div className="flex justify-between p-4 border-t">
           <button
             onClick={()=>{
